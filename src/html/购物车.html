@@ -81,6 +81,19 @@
                             arr2 = JSON.stringify(arr2)
                             cookie.set('shop', arr2)
                         })
+                        var fir = $('.list-head input[type="checkbox"]');
+                        var els = $('.list-body input[type="checkbox"]');
+                        fir.on('click', function() {
+                            var isCheck = $(this).prop('checked');
+                            els.prop('checked', isCheck);
+                        })
+                        els.on('click', function() {
+                            var islength = els.length;
+                            var checkLength = $('.list-body input[type="checkbox"]:checked').length;
+                            isCheck = checkLength === islength;
+                            fir.prop('checked', isCheck)
+
+                        })
                     }
                 });
             }
@@ -142,11 +155,41 @@
                             arr1 = JSON.stringify(arr1)
                             cookie.set('shop1', arr1)
                         })
+                        var fir = $('.list-head input[type="checkbox"]');
+                        var els = $('.list-body input[type="checkbox"]');
+                        fir.on('click', function() {
+                            var isCheck = $(this).prop('checked');
+                            if (isCheck) {
+                                $('.total-price>em').html(toto + toto1);
+                            } else {
+                                $('.total-price>em').html(0);
+                            }
+                            els.prop('checked', isCheck);
+                        })
+                        els.on('click', function() {
+                            var islength = els.length;
+                            var checkLength = $('.list-body input[type="checkbox"]:checked').length;
+                            isCheck = checkLength === islength;
+                            fir.prop('checked', isCheck)
+                            var issCheck = $(this).prop('checked');
+                            var pri = parseInt($(this).parent().parent().children('.total1').html());
+                            if (issCheck) {
+                                $('.total-price>em').html(function(i, oldattr) {
+                                    return oldattr * 1 + pri
+                                    console.log(oldattr, pri)
+                                });
+                            } else {
+                                $('.total-price>em').html(function(i, oldattr) {
+                                    return oldattr - pri
+                                });
+                            }
+                        })
                     }
                 });
 
             }
-            $('.total-price>em').html(toto + toto1)
+            $('.total-price>em').html(toto + toto1);
+
         })
     </script>
 </head>
