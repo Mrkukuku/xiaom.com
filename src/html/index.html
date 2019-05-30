@@ -86,7 +86,7 @@
             height: 22px;
             line-height: 22px;
             padding: 13px 16px 13px 14px;
-            display: block;
+            display: inline-block;
             color: #4a4a4a;
             margin: 14px 0;
             border: 1px solid #e0e0e0;
@@ -97,7 +97,7 @@
             width: 100%;
             height: 50px;
             line-height: 50px;
-            display: block;
+            display: inline-block;
             margin-bottom: 14px;
             text-align: center;
             font-size: 14px;
@@ -106,7 +106,19 @@
             margin-top: 30px;
         }
     </style>
-
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../js/jquery.label_better.min.js"></script>
+    <script>
+        $(function() {
+            $("input.label_better").label_better({
+                position: "top",
+                animationTime: 500,
+                easing: "ease-in-out",
+                offset: 20,
+                hidePlaceholderOnFocus: true
+            });
+        })
+    </script>
 </head>
 
 <body>
@@ -126,9 +138,9 @@
 
                 <div class="login">
                     <form action="../php/login.php" method="post">
-                        <input type="text" name="username" id="username" placeholder="邮箱/手机号码/小米ID" class="input">
+                        <input type="text" name="username" id="username" placeholder="邮箱/手机号码/小米ID" class="input label_better">
                         <span class="message"></span>
-                        <input type="password" name="password" id="password" class="input" placeholder="密码">
+                        <input type="password" name="password" id="password" class="input label_better" placeholder="密码">
                         <input type="submit" value="登录" id="submit">
                     </form>
                     <a href="./小米注册.html">立即注册</a>

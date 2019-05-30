@@ -11,7 +11,7 @@
         location.href='../html/小米商城首页.html';</script>";
     }else{
         echo "<script>alert('登录失败');
-        location.href='../html/小米登录.html';</script>";
+        location.href='../html/index.html';</script>";
     }
     $mysqli->close();
     // cookie. remove('shop');cookie. remove('shop1')
