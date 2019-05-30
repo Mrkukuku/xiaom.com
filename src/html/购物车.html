@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/header.min.css">
+    <link rel="stylesheet" href="../css/shopcar.css">
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../js/cookie.js"></script>
+    <script>
+        $(function() {
+            if (!cookie.get('login')) {
+                location.href = "index.html";
+            }
+            $('#login').html(cookie.get('username'));
+            $('#login').click(function() {
+                cookie.remove('login')
+            })
+            var shop = cookie.get('shop');
+            var shop1 = cookie.get('shop1');
+            var toto = 0;
+            var toto1 = 0;
+            if (shop) {
+                shop = JSON.parse(shop);
+                var arr = shop.map(function(val, i) {
+                    return val
+                });
+                for (var i = 0; i < arr.length; i++) {
+                    toto += parseInt(arr[i].price) * parseInt(arr[i].num)
+                }
+                var idList = shop.map(elm => elm.id).join();
+                $.ajax({
+                    type: "get",
+                    url: "../php/shop.php",
+                    data: {
+                        'idList': idList
+                    },
+                    dataType: "json",
+                    success: function(response) {
+                        response.forEach(function(elm, i) {
+                            var pic = JSON.parse(elm.pic)
+                            var arr = shop.filter((val, i) => {
+                                return val.id === elm.id;
+                            });
+
+                            var str = `  
+                        <div class="itembox clear">
+                        <div class="col col-check"> <input type="checkbox" name="" id="" checked></div>
+                        <div class="col col-img"><img src="${pic[0].src}" alt=""></div>
+                        <div class="col col-name name1">${elm.title}</div>
+                        <div class="col col-price price1">${elm.price}</div>
+                        <div class="col col-num"><input type="number" name="number" id="number" value="${arr[0].num}" min="1" max="${elm.num}" ></div>
+                        <div class="col col-total total1">${parseInt(elm.price)*arr[0].num}元</div>
+                        <a href="javascript:;" data-index=${arr[0].id} class="col col-action iconfont del">&#xe626;</a>
+                    </div>`
+                            $('.list-body').append(str)
+                        });
+                        // var pri = $('.total1');
+                        // for (var i = 0; i < pri.length; i++) {
+                        //     toto += parseInt($(pri[i]).html())
+                        // }
+                        // var str1 = ` <div class="car-bar">
+
+                        //             <span class="total-price">
+                        //                 合计:<em>${toto}</em>元
+                        //             </span>
+                        //             <a href="javascript:;" class="btn">
+                        //                     去结算
+                        //             </a>
+                        //             </div>`
+                        // $('.carbox').after(str1)
+                        $('.del').on('click', function() {
+                            $(this).parent().empty();
+                            var idex = $(this).attr('data-index');
+                            var arr2 = shop.filter((val, i) => {
+                                return val.id !== idex;
+                            });
+                            arr2 = JSON.stringify(arr2)
+                            cookie.set('shop', arr2)
+                        })
+                    }
+                });
+            }
+            if (shop1) {
+                shop1 = JSON.parse(shop1);
+                var arr1 = shop1.map(function(val, i) {
+                    return val
+                });
+                for (var i = 0; i < arr1.length; i++) {
+                    toto1 += parseInt(arr1[i].price) * parseInt(arr1[i].num)
+                }
+                var idList = shop1.map(elm => elm.id).join();
+                $.ajax({
+                    type: "get",
+                    url: "../php/shop1.php",
+                    data: {
+                        'idList': idList
+                    },
+                    dataType: "json",
+                    success: function(response) {
+                        response.forEach(function(elm, i) {
+                            var arr = shop1.filter((val, i) => {
+                                return val.id === elm.id;
+                            });
+
+                            var str = `  
+                        <div class="itembox clear">
+                        <div class="col col-check"> <input type="checkbox" name="" id="" checked></div>
+                        <div class="col col-img"><img src="${elm.pic}" alt=""></div>
+                        <div class="col col-name name1">${elm.title}</div>
+                        <div class="col col-price price1">${elm.price}</div>
+                        <div class="col col-num"><input type="number" name="number" id="number" value="${arr[0].num}" min="1" max="${elm.num}" ></div>
+                        <div class="col col-total total1">${parseInt(elm.price)*arr[0].num}元</div>
+                        <a href="javascript:;" data-index=${arr[0].id} class="col col-action iconfont del1">&#xe626;</a>
+                    </div>`
+                            $('.list-body').append(str)
+                        });
+                        // var pri = $('.total1');
+
+                        // for (var i = 0; i < pri.length; i++) {
+                        //     toto1 += parseInt($(pri[i]).html())
+                        // }
+                        // var str2 = ` <div class="car-bar">
+
+                        //             <span class="total-price">
+                        //                 合计:<em>${toto1}</em>元
+                        //             </span>
+                        //             <a href="javascript:;" class="btn">
+                        //                     去结算
+                        //             </a>
+                        //             </div>`
+                        // $('.carbox').after(str2)
+                        $('.del1').on('click', function() {
+                            $(this).parent().empty();
+                            var idex = $(this).attr('data-index');
+                            var arr1 = shop1.filter((val, i) => {
+                                return val.id !== idex;
+                            });
+                            arr1 = JSON.stringify(arr1)
+                            cookie.set('shop1', arr1)
+                        })
+                    }
+                });
+
+            }
+            $('.total-price>em').html(toto + toto1)
+        })
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div class="base clear">
+            <div class="s-logo">
+                <a href="./小米商城首页.html">
+                    <img src="../image/logo.png" alt="">
+                </a>
+            </div>
+            <div class="s-title">
+                <h2>我的购物车</h2>
+                <p>温馨提示：产品是否购买成功，以最终下单为准哦，请尽快结算</p>
+            </div>
+            <div class="myshop">
+                <div class="user">
+                    <a href="./index.html" id="login">陈同学</a>
+
+                </div>
+                <span>|</span>
+                <span>我的订单</span>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        <div class="base clear">
+            <div class="carbox clear">
+                <div class="list-head">
+                    <div class="col col-check"> <input type="checkbox" name="" id="" checked> 全选</div>
+                    <div class="col col-img">&nbsp;</div>
+                    <div class="col col-name">商品名称</div>
+                    <div class="col col-price">单价</div>
+                    <div class="col col-num">数量</div>
+                    <div class="col col-total">小计</div>
+                    <div class="col col-action">操作</div>
+                </div>
+                <div class="list-body">
+                </div>
+
+            </div>
+            <div class="car-bar">
+
+                <span class="total-price">
+                    合计:<em>----</em>元
+                </span>
+                <a href="javascript:;" class="btn">
+                        去结算
+                </a>
+            </div>
+        </div>
+    </main>
+
+
+
+    <div class="footer">
+        <div class="base">
+            <div class="footer-service">
+                <ul class="list-service clear">
+                    <li style="border: 0;">
+                        <a href="#javascript:;">
+                            <i class="iconfont">&#xe62d;</i> 预约维修服务
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#javascript:;">
+                            <i class="iconfont" style="font-size:20px">&#xe646;</i> 7天无理由退货
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#javascript:;"><i class="iconfont">&#xe667;</i>15天免费换货</a>
+                    </li>
+                    <li>
+                        <a href="#javascript:;"><i class="iconfont">&#xe657;</i>满150元包邮</a>
+                    </li>
+                    <li>
+                        <a href="#javascript:;"><i class="iconfont">&#xe63a;</i>520余家售后网点</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-links clear">
+                <dl>
+                    <dt>帮助中心</dt>
+                    <dd>
+                        <a href="javascript:;">账户管理</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">购物指南</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">订单操作</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>服务支持</dt>
+                    <dd>
+                        <a href="javascript:;">售后政策</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">自助服务</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">相关下载</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>线下门店</dt>
+                    <dd>
+                        <a href="javascript:;">小米之家</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">服务网点</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">授权体验店</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>关于小米</dt>
+                    <dd>
+                        <a href="javascript:;">了解小米</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">加入小米</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">投资者关系</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>关注我们</dt>
+                    <dd>
+                        <a href="javascript:;">新浪微博</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">官方微信</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">联系我们</a>
+                    </dd>
+
+                </dl>
+                <dl>
+                    <dt>特色服务</dt>
+                    <dd>
+                        <a href="javascript:;">F 码通道</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">礼物码</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">防伪查询</a>
+                    </dd>
+                </dl>
+                <div class="col-contact">
+                    <p class="phone1">400-100-5678</p>
+                    <p>
+
+                        周一至周日 8:00-18:00<br>（仅收市话费）
+                    </p>
+                    <a href="javascript:;" class="btn-servise"> 联系客服</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

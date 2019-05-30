@@ -1,0 +1,708 @@
+/*  侧边固定的导航条 */
+
+.home-right {
+    position: fixed;
+    right: 0;
+    top: 120px;
+    z-index: 1000;
+}
+
+.home-right ul {
+    border-top: 1px solid #f5f5f5;
+}
+
+.home-right li {
+    position: relative;
+    width: 82px;
+    height: 90px;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid #f5f5f5;
+    border-top: none;
+}
+
+.home-right a {
+    display: block;
+    height: 100%;
+    color: #757575;
+}
+
+.home-right .bar-img {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    padding-top: 20px;
+    margin: 0 0 0 27px;
+}
+
+.bar-img img {
+    width: 30px;
+    height: 30px;
+}
+
+.bar-img .in {
+    display: none;
+}
+
+.home-right p {
+    margin: 8px 0 0 0;
+    text-align: center;
+}
+
+.home-right li>a:hover {
+    color: #ff6700;
+}
+
+.home-right a:hover .in {
+    display: inline-block;
+}
+
+.home-right a:hover .on {
+    display: none;
+}
+
+
+/* 侧边固定的导航条的二级导航 */
+
+.home-right .bar-subnav {
+    position: absolute;
+    left: -137px;
+    top: 0;
+    height: 187px;
+    display: none;
+}
+
+.subnav-content {
+    float: left;
+    height: 187px;
+    background: #fff;
+    border: 1px solid #f5f5f5;
+}
+
+.subnav-content img {
+    width: 100px;
+    height: 100px;
+    margin: 20px 14px;
+    background: #fff;
+}
+
+.subnav-content .subnav-text {
+    width: 83px;
+    margin: -10px auto 0;
+    color: #333;
+}
+
+.bar-subnav .subnav-arrow {
+    float: left;
+    width: 11px;
+    height: 187px;
+    margin-left: -1px;
+    background: url(../image/arrow.png) no-repeat left 38px;
+}
+
+.home-right a:hover .bar-subnav {
+    display: block;
+}
+
+
+/* 热门物品 */
+
+.search-hot {
+    position: absolute;
+    top: 14px;
+    right: 62px;
+    z-index: 2;
+    text-align: right;
+}
+
+.search-hot>a {
+    display: inline-block;
+    margin-left: 5px;
+    padding: 0 5px;
+    font-size: 12px;
+    background: #eee;
+    color: #757575;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+
+.search-hot>a:hover {
+    background-color: #ff6700;
+    color: white;
+}
+
+
+/* bannernav */
+
+.site-banner {
+    position: absolute;
+    top: 88px;
+    left: -92px;
+    z-index: 21;
+    width: 234px;
+    height: 460px;
+    font-size: 14px;
+}
+
+.site-ul {
+    height: 420px;
+    border: 0;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px 0;
+}
+
+.site-ul a {
+    position: relative;
+    display: block;
+    padding-left: 30px;
+    height: 42px;
+    line-height: 42px;
+    color: #fff;
+    z-index: 20;
+}
+
+.site-ul i {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 16px;
+    line-height: 16px;
+    color: rgba(255, 255, 255, 0.5);
+    background: url(../image/尖括号-粗大-右.png) no-repeat;
+    width: 16px;
+    height: 16px;
+}
+
+.sub-ul-4 {
+    width: 992px;
+    position: absolute;
+    left: 234px;
+    top: 0;
+    z-index: 24;
+    height: 458px;
+    border: 1px solid #e0e0e0;
+    border-left: 0;
+    background: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+    display: none;
+}
+
+.sub-ul-4 ul {
+    width: 248px;
+    height: 458px;
+    padding: 2px 0;
+    float: left;
+}
+
+.sub-ul-4 ul li {
+    float: left;
+    width: 265px;
+    height: 76px;
+}
+
+.sub-ul-4 li a {
+    display: block;
+    padding: 18px 20px;
+    line-height: 40px;
+    color: #333;
+    transition: color .2s;
+}
+
+.sub-ul-4 a img {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 12px;
+}
+
+.site-ul>li:hover>a {
+    background-color: #ff6700;
+    color: white;
+}
+
+.site-ul li:hover .sub-ul-4 {
+    display: block;
+}
+
+title
+/* banner */
+
+.banner {
+    position: relative;
+    z-index: 10;
+}
+
+.banner img {
+    width: 1226px;
+    height: 460px;
+}
+
+
+/* banner nav */
+
+.banner-nav {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* 左边盒子 */
+
+.banner-subnav {
+    width: 234px;
+    display: flex;
+    font-size: 12px;
+    text-align: center;
+    background: #5f5750;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.banner-subnav a {
+    color: rgba(255, 255, 255, 0.7);
+    display: block;
+    width: 70px;
+    height: 42px;
+    padding: 20px 3px;
+}
+
+.banner-subnav a:hover {
+    color: white;
+}
+
+
+/* 礼物图标 */
+
+.banner-subnav a i {
+    display: block;
+    height: 24px;
+    margin-bottom: 4px;
+    font-size: 24px;
+    line-height: 24px;
+}
+
+
+/* 其余三个图片盒子 */
+
+.threeimg {
+    width: 316px;
+}
+
+.threeimg img {
+    width: 316px;
+    height: 170px;
+}
+
+
+/* banner最下面的图片 */
+
+.banner2 {
+    margin: 30px 0 42px;
+    overflow: hidden;
+    height: 120px;
+}
+
+.banner2 img {
+    width: 1226px;
+    height: 120px
+}
+
+
+/* main */
+
+.main {
+    padding-top: 20px;
+    background-color: #f5f5f5;
+    padding-bottom: 20px;
+}
+
+.main .phone {
+    height: 686px;
+    margin-bottom: 8px;
+}
+
+
+/* 手机标题 */
+
+
+/* 公共标题盒子 */
+
+.titlebox {
+    height: 58px;
+    position: relative;
+}
+
+
+/* 公共标题 */
+
+.title2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 58px;
+    color: #333;
+}
+
+.titlebox .more {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.more a {
+    font-size: 16px;
+    line-height: 58px;
+    color: #424242;
+    transition: all .4s;
+}
+
+.more .iconfont {
+    width: 12px;
+    height: 12px;
+    border-radius: 16px;
+    padding: 4px;
+    margin-left: 8px;
+    font-size: 12px;
+    line-height: 12px;
+    color: #fff;
+    background: #b0b0b0;
+    vertical-align: 1px;
+    transition: all .4s;
+}
+
+.more a:hover {
+    color: #ff6700;
+}
+
+.more a:hover i {
+    background-color: #ff6700;
+}
+
+
+/* 左边手机图片信息 */
+
+.phone-img {
+    margin-left: -14px;
+}
+
+.phone-img .phone-left {
+    width: 234px;
+    float: left;
+    margin-left: 14px
+}
+
+.phone-left img {
+    widows: 234px;
+    height: 614px;
+}
+
+
+/* 右边手机图片信息 */
+
+.phone-right {
+    float: left;
+    margin-left: 14px;
+    width: 978px;
+}
+
+.phone-right ul {
+    width: 992px;
+}
+
+.phone-right li {
+    position: relative;
+    z-index: 1;
+    float: left;
+    width: 234px;
+    height: 260px;
+    padding: 20px 0;
+    margin-left: 14px;
+    margin-bottom: 14px;
+    background: #fff;
+    transition: all .2s;
+}
+
+.phone-right .imgbox img {
+    width: 160px;
+    height: 160px;
+}
+
+
+/* 手机新品盒子 */
+
+.phone-right .newbox {
+    background-color: #83c44e;
+    width: 64px;
+    height: 20px;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -32px;
+}
+
+.phone-right .newboxbg {
+    background-color: #e53935;
+}
+
+
+/* 手机图片盒子 */
+
+.phone-right .imgbox {
+    margin: 0 auto 18px;
+    width: 160px;
+    height: 160px;
+}
+
+
+/* 手机信息 */
+
+.phone-right .title {
+    margin: 0 10px 2px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.phone-right .title1 {
+    margin: 0 10px 10px;
+    height: 18px;
+    font-size: 12px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #b0b0b0;
+}
+
+.price {
+    margin: 0 10px 14px;
+    text-align: center;
+    color: #ff6700;
+}
+
+
+/* 阴影效果 */
+
+.phone-right li:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transform: translate3d(0, -2px, 0)
+}
+
+
+/* 小米电视特惠 */
+
+.main .mitv {
+    height: 120px;
+    margin: 28px 0 22px;
+}
+
+
+/* 家电 */
+
+.main .homeelec {
+    height: 686px;
+    margin-bottom: 8px;
+}
+
+.main .hothomeelec {
+    padding: 16px 0 0;
+    font-size: 16px;
+}
+
+.hothomeelecbox {
+    height: 58px;
+}
+
+.hothomeelec li {
+    color: #ff6700;
+    margin-left: 30px;
+    float: left;
+}
+
+.hothomeelec li:nth-child(1) {
+    border-bottom: 2px solid #ff6700;
+}
+
+.hothomeelec li>a {
+    color: #424242;
+}
+
+
+/* 家电信息 */
+
+.homeelecul {
+    margin: 0 0 -14px -14px;
+    height: 614px;
+}
+
+
+/* 固定样式 */
+
+.brick-item {
+    position: relative;
+    z-index: 1;
+    float: left;
+    width: 234px;
+    margin-left: 14px;
+    margin-bottom: 14px;
+    background: #fff;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+}
+
+.brick-item:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transform: translate3d(0, -2px, 0)；
+}
+
+.homeelecimg {
+    height: 300px;
+}
+
+.homeelecimg img {
+    width: 234px;
+    height: 300px;
+}
+
+
+/* 固定文字描述 */
+
+.review-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    width: 234px;
+    height: 0;
+    font-size: 12px;
+    background: #ff6700;
+    opacity: 0;
+    filter: alpha(opacity=0)\9;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+}
+
+.review-wrapper a {
+    display: block;
+    padding: 8px 30px;
+    outline: 0;
+}
+
+.review {
+    margin-bottom: 5px;
+    color: #fff;
+    display: block;
+}
+
+.author {
+    color: rgba(255, 255, 255, 0.6);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+}
+
+.phone-right li:hover .review-wrapper {
+    height: 76px;
+    opacity: 1;
+}
+
+
+/* 热评产品 */
+
+.hotproduct {
+    margin-bottom: 20px;
+}
+
+.hotproduct li:nth-child(1) {
+    margin-left: 0;
+}
+
+.review-list {
+    width: 1240px;
+    height: 415px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.review-item {
+    position: relative;
+    float: left;
+    width: 296px;
+    height: 415px;
+    margin-bottom: 14px;
+    background: #fff;
+    transition: all .2s linear;
+}
+
+.figure-img {
+    width: 296px;
+    height: 220px;
+    margin: 0 0 28px;
+}
+
+.figure-img img {
+    width: 296px;
+    height: 220px;
+}
+
+.review-item .review {
+    height: 72px;
+    margin: 0 28px 22px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    overflow: hidden;
+}
+
+.review-item .auto {
+    position: relative;
+    height: 18px;
+    margin: 0 28px 8px;
+    padding: 0 10px 0 0;
+    font-size: 12px;
+    color: #b0b0b0;
+}
+
+.review-item .info {
+    margin: 0 30px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.review-item .title {
+    display: inline-block;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    max-width: 170px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: bottom;
+    color: #333;
+}
+
+.sep {
+    margin: 0 .25em;
+    color: #e0e0e0;
+}
+
+.info .price {
+    display: inline-block;
+    margin: 0;
+}
+
+.review-item:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transform: translate3d(0, -2px, 0)
+}

@@ -1,0 +1,125 @@
+/* bannernav */
+
+.site-banner {
+    position: absolute;
+    /* top: 80px; */
+    left: -92px;
+    z-index: 211;
+    width: 234px;
+    height: 460px;
+    font-size: 14px;
+    display: none;
+}
+
+.navlist .lilogo:hover .site-banner {
+    display: block;
+}
+
+.site-ul {
+    height: 420px;
+    border: 0;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px 0;
+}
+
+.site-ul a {
+    position: relative;
+    display: block;
+    padding-left: 30px;
+    height: 42px;
+    line-height: 42px;
+    color: #fff;
+    z-index: 20;
+}
+
+.site-ul i {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 16px;
+    line-height: 16px;
+    color: rgba(255, 255, 255, 0.5);
+    background: url(../image/尖括号-粗大-右.png) no-repeat;
+    width: 16px;
+    height: 16px;
+}
+
+.sub-ul-4 {
+    width: 992px;
+    position: absolute;
+    left: 234px;
+    top: 0;
+    z-index: 24;
+    height: 458px;
+    border: 1px solid #e0e0e0;
+    border-left: 0;
+    background: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+    display: none;
+}
+
+.sub-ul-4 ul {
+    width: 248px;
+    height: 458px;
+    padding: 2px 0;
+    float: left;
+}
+
+.sub-ul-4 ul li {
+    float: left;
+    width: 265px;
+    height: 76px;
+}
+
+.sub-ul-4 li a {
+    display: block;
+    padding: 18px 20px;
+    line-height: 40px;
+    color: #333;
+    transition: color .2s;
+}
+
+.sub-ul-4 a img {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 12px;
+}
+
+.site-ul>li:hover>a {
+    background-color: #ff6700;
+    color: white;
+}
+
+.site-ul li:hover .sub-ul-4 {
+    display: block;
+}
+
+
+/* 热门物品 */
+
+.search-hot {
+    position: absolute;
+    top: 14px;
+    right: 62px;
+    z-index: 2;
+    text-align: right;
+}
+
+.search-hot>a {
+    display: inline-block;
+    margin-left: 5px;
+    padding: 0 5px;
+    font-size: 12px;
+    background: #eee;
+    color: #757575;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+
+.search-hot>a:hover {
+    background-color: #ff6700;
+    color: white;
+}

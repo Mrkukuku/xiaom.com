@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小米商城 - 小米9、小米MIX 3、红米Note 7，小米电视官方网站</title>
+    <link rel="stylesheet" href="../css/header.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/小米.css">
+    <!-- <link rel="stylesheet" href="../css/xiaomi.css"> -->
+    <link rel="stylesheet" href="../css/轮播.css">
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../js/cookie.js"></script>
+    <script src="../js/xiaomi.js"></script>
+    <script>
+        if (!cookie.get('login')) {
+            location.href = "index.html";
+        }
+        $(function() {
+            $('#login').html(cookie.get('username'));
+            $('#login').click(function() {
+                cookie.remove('login')
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <!-- 头部导航栏 -->
+    <div class="header">
+        <div class="base">
+            <div class="nav">
+                <a href="小米商城首页.html" id='xiaomi'>小米商城</a><span>|</span>
+                <a href="javascript:;">MIUI</a><span>|</span>
+                <a href="javascript:;">IoT</a><span>|</span>
+                <a href="javascript:;">云服务</a><span>|</span>
+                <a href="javascript:;">金融</a><span>|</span>
+                <a href="javascript:;">有品</a><span>|</span>
+                <a href="javascript:;">小爱开放平台</a><span>|</span>
+                <a href="javascript:;">政企服务</a><span>|</span>
+                <a href="javascript:;">资质证照</a><span>|</span>
+                <a href="javascript:;">协议规则</a><span>|</span>
+                <a href="javascript:;" class="download">
+                    <span>下载app</span>
+                    <div class="app">
+                        <i></i>
+                        <!-- 小米二维码 -->
+                        <div class="appimg">
+                            <img src="../image/download.png">
+                            <p>小米商城APP</p>
+                        </div>
+                    </div>
+                </a>
+                <span>|</span>
+                <a href="javascript:;">Select Region</a><span>|</span>
+
+            </div>
+            <!-- 右盒子  -->
+            <div class="nav-right">
+                <a href="./index.html" id="login">退出登录</a><span>|</span>
+                <a href="./小米注册.html">注册</a><span>|</span>
+                <a href="javascript:;">消息通知</a>
+                <a href="./购物车.html" class="buy">
+                    <i class="iconfont">&#xe640;</i>
+                    <span>购物车</span>
+                    <!-- 购物车盒子 -->
+                    <div class="buybox">
+                        购物车中还没有商品，赶紧选购吧！
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- 头部第二个导航条 -->
+    <div class="site-nav">
+        <div class="base clear">
+            <div class="header-logo">
+                <a href="javascript:;"></a>
+            </div>
+            <div class="header-nav">
+                <ul class="navlist">
+                    <li class="lilogo">
+                        <span class="logo1"></span>
+                        <!-- banner 导航导航条 -->
+                        <div class="site-banner">
+                            <ul class="site-ul">
+                                <li>
+                                    <a href="javascript:;">手机 电话卡
+                                        <i></i>
+                                    </a>
+                                    <div class="sub-ul-4">
+                                        <ul>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <img src="../image/mi9-80.png">
+                                                    <span style="line-height:40px;"> 小米9</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <img src="../image/mi9-80.png">
+                                                    <span style="line-height:40px;"> 小米9</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <img src="../image/mi9-80.png">
+                                                    <span style="line-height:40px;"> 小米9</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <img src="../image/mi9-80.png">
+                                                    <span style="line-height:40px;"> 小米9</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <img src="../image/mi9-80.png">
+                                                    <span style="line-height:40px;"> 小米9</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <img src="../image/mi9-80.png">
+                                                    <span style="line-height:40px;"> 小米9</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <img src="../image/mi9-80.png">
+                                                    <span style="line-height:40px;"> 小米9</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <img src="../image/mi9-80.png">
+                                                    <span style="line-height:40px;"> 小米9</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <img src="../image/mi9-80.png">
+                                                    <span style="line-height:40px;"> 小米9</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <img src="../image/mi9-80.png">
+                                                    <span style="line-height:40px;"> 小米9</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <img src="../image/mi9-80.png">
+                                                    <span style="line-height:40px;"> 小米9</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <img src="../image/mi9-80.png">
+                                                    <span style="line-height:40px;"> 小米9</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <img src="../image/mi9-80.png">
+                                                    <span style="line-height:40px;"> 小米9</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <img src="../image/mi9-80.png">
+                                                    <span style="line-height:40px;"> 小米9</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <img src="../image/mi9-80.png">
+                                                    <span style="line-height:40px;"> 小米9</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <img src="../image/mi9-80.png">
+                                                    <span style="line-height:40px;"> 小米9</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <img src="../image/mi9-80.png">
+                                                    <span style="line-height:40px;"> 小米9</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <img src="../image/mi9-80.png">
+                                                    <span style="line-height:40px;"> 小米9</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <img src="../image/mi9-80.png">
+                                                    <span style="line-height:40px;"> 小米9</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <img src="../image/mi9-80.png">
+                                                    <span style="line-height:40px;"> 小米9</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <img src="../image/mi9-80.png">
+                                                    <span style="line-height:40px;"> 小米9</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <img src="../image/mi9-80.png">
+                                                    <span style="line-height:40px;"> 小米9</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <img src="../image/mi9-80.png">
+                                                    <span style="line-height:40px;"> 小米9</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <img src="../image/mi9-80.png">
+                                                    <span style="line-height:40px;"> 小米9</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="javascript:;"> 电视 盒子 <i></i></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;"> 笔记本 平板 <i></i></a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:;">家电 插线板 <i></i></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">出行 穿戴 <i></i></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">智能 路由器 <i></i></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">电源 配件 <i></i></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">健康 儿童 <i></i></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">耳机 音箱 <i></i></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">生活 箱包 <i></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;">小米手机</a>
+                        <!-- 二级导航条 -->
+                        <div class="subnav">
+                            <div class="base">
+                                <ul>
+                                    <li>
+                                        <div class="hotxin">新品</div>
+                                        <a href="javascript:;">
+                                            <img src="../image/mi9-320.png">
+                                        </a>
+                                        <div> <a href="javascript:;">小米</a>
+                                            <p style="line-height: 20px;
+                                        color: #ff6700;">2999</p>
+                                        </div>
+                                    </li>
+                                    <div class="soild"></div>
+                                    <li>
+                                        <div class="hotxin">新品</div>
+                                        <a href="javascript:;">
+                                            <img src="../image/mi9-320.png">
+                                        </a>
+                                        <div> <a href="javascript:;">小米9 王源限量版</a>
+                                            <p style="line-height: 20px;
+                                            color: #ff6700;">2999</p>
+                                        </div>
+
+                                    </li>
+                                    <div class="soild"></div>
+                                    <li>
+                                        <div class="hotxin">新品</div>
+                                        <a href="javascript:;">
+                                            <img src="../image/mi9-320.png">
+                                        </a>
+                                        <div> <a href="javascript:;">小米9 SE</a>
+                                            <p style="line-height: 20px;
+                                                color: #ff6700;">2999</p>
+                                        </div>
+
+                                    </li>
+                                    <div class="soild"></div>
+                                    <li>
+                                        <div class="hotxin">新品</div>
+                                        <a href="javascript:;">
+                                            <img src="../image/mi9-320.png">
+                                        </a>
+                                        <div>
+                                            <a href="javascript:;">小米9 SE 布朗熊限量套装</a>
+                                            <p style="line-height: 20px;
+                                            color: #ff6700;">2999</p>
+                                        </div>
+
+                                    </li>
+                                    <div class="soild"></div>
+                                    <li>
+                                        <div class="hotxin">新品</div>
+                                        <a href="javascript:;">
+                                            <img src="../image/mi9-320.png">
+                                        </a>
+                                        <div> <a href="javascript:;">小米MIX 3</a>
+                                            <p style="line-height: 20px;
+                                                color: #ff6700;">2999</p>
+                                        </div>
+
+                                    </li>
+                                    <div class="soild"></div>
+                                    <li>
+                                        <div class="hotxin">新品</div>
+                                        <a href="javascript:;">
+                                            <img src="../image/mi9-320.png">
+                                        </a>
+                                        <div> <a href="javascript:;">小米8 青春版</a>
+                                            <p style="line-height: 20px;
+                                                color: #ff6700;">2999</p>
+                                        </div>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;">红米</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">电视</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">笔记本</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">家电</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">新品</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">路由器</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">智能硬件</a>
+
+                    </li>
+                    <li>
+                        <a href="javascript:;">服务</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">社区</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 搜索框 -->
+            <div class="header-search clear">
+                <form>
+                    <input type="search" class="search">
+                    <input type="submit" class="submit iconfont" value="&#xe62f">
+                    <div class="search-hot">
+                        <a href="javascript:;">小米9</a>
+                        <a href="javascript:;">小米9&nbsp;SE</a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- 侧边固定的导航条 -->
+    <div class="home-right">
+        <ul>
+            <li>
+                <a href="javascript:;">
+                    <div class="bar-img">
+                        <img src="../image/phone1.png" class="on">
+                        <img src="../image/phone2.png" class="in">
+                    </div>
+                    <p>手机APP</p>
+                    <div class="bar-subnav">
+                        <div class="subnav-content">
+                            <img src="../image/download.png">
+                            <p class="subnav-text">手机扫一扫一分赢好礼</p>
+                        </div>
+                        <div class="subnav-arrow"></div>
+                    </div>
+                </a>
+
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <div class="bar-img">
+                        <img src="../image/user1.png" class="on">
+                        <img src="../image/user2.png" class="in">
+                    </div>
+                    <p>个人中心</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <div class="bar-img">
+                        <img src="../image/tool1.png" class="on">
+                        <img src="../image/tool2.png" class="in">
+                    </div>
+                    <p>售后服务</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <div class="bar-img">
+                        <img src="../image/listing1.png" class="on">
+                        <img src="../image/listing2.png" class="in">
+                    </div>
+                    <p>联系客服</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <div class="bar-img">
+                        <img src="../image/shopping.png" class="on">
+                        <img src="../image/shopping1.png" class="in">
+                    </div>
+                    <p>购物车</p>
+                </a>
+            </li>
+            <li>
+                <a href="#xiaomi">
+                    <div class="bar-img">
+                        <img src="../image/totop.png" class="on">
+                        <img src="../image/totop_hover.png" class="in">
+                    </div>
+                    <p>回到顶部</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- banner -->
+    <div class="banner base">
+        <!-- <a href="javascript:;"> <img src="../image/banner.jpg"></a> -->
+        <div class="banner-top">
+            <div class="side"><img src="../image/banner1.jpg" alt="1"></div>
+            <div class="side"><img src="../image/banner3.jpg" alt="2"></div>
+            <div class="side"><img src="../image/banner4.jpg" alt="3"></div>
+            <div class="side"><img src="../image/banner5.jpg" alt="4"></div>
+            <div class="side"><img src="../image/banner.jpg" alt="5"></div>
+            <div class="banner-bottom">
+                <div class="btns">
+                    <a href="javascript:void(0);" class="btn active">1</a>
+                    <a href="javascript:void(0);" class="btn">2</a>
+                    <a href="javascript:void(0);" class="btn">3</a>
+                    <a href="javascript:void(0);" class="btn">4</a>
+                    <a href="javascript:void(0);" class="btn ">5</a>
+                </div>
+                <div class="sidebtn">
+                    <a href="javascript:void(0);" class="leftbtn"></a>
+                    <a href="javascript:void(0);" class="rightbtn"></a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="banner-nav">
+            <!-- banner里的nav -->
+            <div class="banner-subnav">
+                <a href="javascript:;"><i class="iconfont">&#xe657;</i>选购手机</a>
+                <a href="javascript:;"><i class="iconfont">&#xe657;</i>企业团购</a>
+                <a href="javascript:;"><i class="iconfont">&#xe657;</i>F码通道</a>
+                <a href="javascript:;"><i class="iconfont">&#xe657;</i>选购手机</a>
+                <a href="javascript:;"><i class="iconfont">&#xe657;</i>企业团购</a>
+                <a href="javascript:;"><i class="iconfont">&#xe657;</i>F码通道</a>
+
+            </div>
+            <div class="threeimg">
+                <a href="javascript:;"><img src="../image/three1.jpg"></a>
+            </div>
+            <div class="threeimg">
+                <a href="javascript:;"><img src="../image/three2.jpg"></a>
+            </div>
+            <div class="threeimg">
+                <a href="javascript:;"><img src="../image/three3.jpg"></a>
+            </div>
+        </div>
+        <div class="banner2">
+            <a href="javascript:;"> <img src="../image/banner2.jpg"></a>
+        </div>
+    </div>
+    <!-- main -->
+    <div class="main">
+        <div class="base">
+            <!-- 手机 -->
+            <div class="phone">
+                <div class="phone-title">
+                    <div class="titlebox">
+                        <!-- 小标题 -->
+                        <h2 class="title2">手机</h2>
+                        <div class="more">
+                            <a href="javascript:;">
+                                        查看全部
+                                        <i class="iconfont">&#xe635;</i>
+                                    </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="phone-img">
+                    <!-- 左边盒子 -->
+                    <div class="phone-left">
+                        <a href="javascript:;">
+                            <img src="../image/leftimg.jpg">
+                        </a>
+                    </div>
+                    <!-- 右边盒子 -->
+                    <div class="phone-right">
+                        <ul class="clear product1">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 小米电视特惠 -->
+            <div class="mitv ">
+                <a href="javascript:;">
+                    <img src="../image/xmad_15548167385844_SqDzX.jpg" style="width:1226px;">
+                </a>
+            </div>
+            <!-- 家电 -->
+            <div class="homeelec">
+                <div class="homeelecbox clear">
+                    <!-- 小标题 -->
+                    <h2 class="title2 left">家电</h2>
+                    <ul class="hothomeelec right">
+                        <li>
+                            <a href="javascript:;">热门</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">电视影音</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">电脑</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">家居</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="phone-img">
+                    <div class="phone-left">
+                        <ul class="homeelecul">
+                            <li class="brick-item homeelecimg">
+                                <a href="javascript:;">
+                                    <img src="../image/xmad_15232433421155_vCzhJ.jpg">
+                                </a>
+                            </li>
+                            <li class="brick-item homeelecimg">
+                                <a href="javascript:;">
+                                    <img src="../image/xmad_15123939053142_dFlAw.jpg">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="phone-right ">
+                        <ul class="clear product2">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 热评产品 -->
+            <div class="hotproduct">
+                <!-- 小标题 -->
+                <div class="titlebox">
+                    <h2 class="title2">热评产品</h2>
+                </div>
+                <ul class="review-list product3">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 底部 -->
+    <div class="footer">
+        <div class="base">
+            <div class="footer-service">
+                <ul class="list-service clear">
+                    <li style="border: 0;">
+                        <a href="#javascript:;">
+                            <i class="iconfont">&#xe62d;</i> 预约维修服务
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#javascript:;">
+                            <i class="iconfont" style="font-size:20px">&#xe646;</i> 7天无理由退货
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#javascript:;"><i class="iconfont">&#xe667;</i>15天免费换货</a>
+                    </li>
+                    <li>
+                        <a href="#javascript:;"><i class="iconfont">&#xe657;</i>满150元包邮</a>
+                    </li>
+                    <li>
+                        <a href="#javascript:;"><i class="iconfont">&#xe63a;</i>520余家售后网点</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-links clear">
+                <dl>
+                    <dt>帮助中心</dt>
+                    <dd>
+                        <a href="javascript:;">账户管理</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">购物指南</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">订单操作</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>服务支持</dt>
+                    <dd>
+                        <a href="javascript:;">售后政策</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">自助服务</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">相关下载</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>线下门店</dt>
+                    <dd>
+                        <a href="javascript:;">小米之家</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">服务网点</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">授权体验店</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>关于小米</dt>
+                    <dd>
+                        <a href="javascript:;">了解小米</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">加入小米</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">投资者关系</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>关注我们</dt>
+                    <dd>
+                        <a href="javascript:;">新浪微博</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">官方微信</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">联系我们</a>
+                    </dd>
+
+                </dl>
+                <dl>
+                    <dt>特色服务</dt>
+                    <dd>
+                        <a href="javascript:;">F 码通道</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">礼物码</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">防伪查询</a>
+                    </dd>
+                </dl>
+                <div class="col-contact">
+                    <p class="phone1">400-100-5678</p>
+                    <p>
+
+                        周一至周日 8:00-18:00<br>（仅收市话费）
+                    </p>
+                    <a href="javascript:;" class="btn-servise"> 联系客服</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

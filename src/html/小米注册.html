@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        input {
+            background: 0;
+            border: 0;
+        }
+        
+        header {
+            width: 1130px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            width: 200px;
+            height: 98px;
+            background: url(../image/mistore_logo.png) no-repeat;
+        }
+        
+        .banner {
+            width: 100%;
+            height: 588px;
+            position: absolute;
+            left: 0;
+            top: 98px;
+            background: url(../image/bg1.jpg);
+            background-repeat: no-repeat;
+            background-position: top center;
+        }
+        
+        .warpper {
+            padding-top: 50px;
+            width: 1130px;
+            margin: 0 auto;
+        }
+        
+        .layout {
+            background-color: #fff;
+            margin: 0 auto 20px;
+            position: relative;
+            width: 410px;
+            min-height: 544px;
+            margin-bottom: 0;
+            margin-right: 0;
+            font-size: 14px;
+            z-index: 4;
+        }
+        
+        .tabs {
+            padding: 27px 0 24px;
+            text-align: center;
+            font-size: 24px;
+            color: #666;
+        }
+        
+        .line {
+            width: 1px;
+            height: 24px;
+            margin: 0 35px 0 42px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .login {
+            width: 348px;
+            padding-bottom: 0;
+            margin: 0 auto;
+        }
+        
+        .input {
+            width: 306px;
+            height: 22px;
+            line-height: 22px;
+            padding: 13px 16px 13px 14px;
+            display: block;
+            color: #4a4a4a;
+            margin: 14px 0;
+            border: 1px solid #e0e0e0;
+        }
+        
+        #submit {
+            background-color: #ff6700;
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            display: block;
+            margin-bottom: 14px;
+            text-align: center;
+            font-size: 14px;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+    </style>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $('#username').keyup(function() {
+                $.ajax({
+                    type: "get",
+                    url: "../php/zhuce.php",
+                    data: {
+                        username: this.value,
+                        password: ''
+                    },
+                    dataType: "json",
+                    success: function(response) {
+                        if (response.reslut) {
+                            $('.messeg').html(response.messeg).css('color', 'red')
+
+                        } else if ($('#username').val()) {
+                            $('.messeg').html(response.messeg).css('color', 'green')
+                        }
+                    }
+                });
+                if (!$('#username').val()) {
+                    $('.messeg').html('')
+                }
+            });
+            // $('#username').blur(function() {
+            //     $('.messeg').html('')
+            // })
+
+
+
+            $('#checked').keyup(function() {
+                if ($(this).val() == $('#password').val()) {
+                    $('.check').html('');
+                } else {
+                    $('.check').html('密码不一致').css('color', 'red');
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href=""></a>
+        </div>
+    </header>
+    <div class="banner">
+        <div class="warpper">
+            <div class="layout">
+                <div class="tabs">
+                    <a href="javascript:void(0);" style="color: #f56600;">账号注册</a>
+                    <span class="line"></span>
+                    <a href="./index.html" style=" color: #666;">账号登录</a>
+                </div>
+
+                <div class="login">
+                    <form action="../php/zhuce1.php" method="get">
+                        <input type="text" name="username" id="username" placeholder="邮箱/手机号码/小米ID" class="input">
+                        <span class="messeg"></span>
+                        <input type="password" name="password" id="password" class="input" placeholder="密码">
+                        <input type="password" name="password" id="checked" class="input" placeholder="请确认密码">
+                        <span class="check"></span>
+                        <input type="submit" value="注册" id="submit">
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "xiaomi.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gulp-cssmin": "^0.2.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglify": "^3.0.2",
+    "jquery": "^3.4.1",
+    "jquey": "0.0.1-security",
+    "ui": "^0.2.4"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-buffer": "0.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-spritesmash": "^1.1.1",
+    "gulp.spritesmith": "^6.10.0"
+  }
+}
