@@ -147,7 +147,8 @@ main .carbox .itembox .price {
   color: #424242;
 }
 
-main .carbox .itembox .total1 {
+main .carbox .itembox .total1,
+main .carbox .itembox .total2 {
   color: #ff6700;
   font-size: 16px;
 }
