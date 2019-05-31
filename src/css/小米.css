@@ -386,6 +386,8 @@ title
 
 .phone-img {
     margin-left: -14px;
+    overflow: hidden;
+    margin-bottom: 8px;
 }
 
 .phone-img .phone-left {

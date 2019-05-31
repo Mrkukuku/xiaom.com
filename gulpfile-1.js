@@ -53,3 +53,8 @@
             .pipe(spritesmash())
             .pipe(gulp.dest('dist/img'));
     });
+
+    // 6. 文件监听
+    gulp.task('watch', () => {
+        gulp.watch(['./src/html/*.html', './src/css/*.css', './src/js/*.js'], gulp.series('htmlmin', 'cssmin', 'js'));
+    });

@@ -11,19 +11,9 @@
     <!-- <link rel="stylesheet" href="../css/xiaomi.css"> -->
     <link rel="stylesheet" href="../css/轮播.css">
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../js/cookie.js"></script>
     <script src="../js/xiaomi.js"></script>
-    <script>
-        if (!cookie.get('login')) {
-            location.href = "index.html";
-        }
-        $(function() {
-            $('#login').html(cookie.get('username'));
-            $('#login').click(function() {
-                cookie.remove('login')
-            })
-        })
-    </script>
+    <script src="../js/jquery.lazyload.min.js"></script>
+    <script src="../js/cookie.js"></script>
 </head>
 
 <body>
@@ -449,7 +439,7 @@
                 </a>
             </li>
             <li>
-                <a href="javascript:;">
+                <a href="./购物车.html">
                     <div class="bar-img">
                         <img src="../image/shopping.png" class="on">
                         <img src="../image/shopping1.png" class="in">
@@ -515,7 +505,7 @@
             </div>
         </div>
         <div class="banner2">
-            <a href="javascript:;"> <img src="../image/banner2.jpg"></a>
+            <a href="javascript:;"> <img class="lazy" data-original="../image/banner2.jpg"></a>
         </div>
     </div>
     <!-- main -->
@@ -540,7 +530,7 @@
                     <!-- 左边盒子 -->
                     <div class="phone-left">
                         <a href="javascript:;">
-                            <img src="../image/leftimg.jpg">
+                            <img class="lazy" data-original="../image/leftimg.jpg">
                         </a>
                     </div>
                     <!-- 右边盒子 -->
@@ -554,7 +544,7 @@
             <!-- 小米电视特惠 -->
             <div class="mitv ">
                 <a href="javascript:;">
-                    <img src="../image/xmad_15548167385844_SqDzX.jpg" style="width:1226px;">
+                    <img class="lazy" data-original="../image/xmad_15548167385844_SqDzX.jpg" style="width:1226px;">
                 </a>
             </div>
             <!-- 家电 -->
@@ -582,12 +572,12 @@
                         <ul class="homeelecul">
                             <li class="brick-item homeelecimg">
                                 <a href="javascript:;">
-                                    <img src="../image/xmad_15232433421155_vCzhJ.jpg">
+                                    <img class="lazy" data-original="../image/xmad_15232433421155_vCzhJ.jpg">
                                 </a>
                             </li>
                             <li class="brick-item homeelecimg">
                                 <a href="javascript:;">
-                                    <img src="../image/xmad_15123939053142_dFlAw.jpg">
+                                    <img class="lazy" data-original="../image/xmad_15123939053142_dFlAw.jpg">
                                 </a>
                             </li>
                         </ul>
@@ -598,7 +588,260 @@
                         </ul>
                     </div>
                 </div>
+
             </div>
+
+            <div class="mitv ">
+                <a href="javascript:;">
+                    <img class="lazy" data-original="../image/mvt2.jpg" style="width:1226px;">
+                </a>
+            </div>
+            <!-- 智能家电 -->
+            <div class="homeelec">
+                <div class="homeelecbox clear">
+                    <!-- 小标题 -->
+                    <h2 class="title2 left">智能</h2>
+                    <ul class="hothomeelec right">
+                        <li>
+                            <a href="javascript:;">热门</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">出行</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">健康</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">酷玩</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">路由器</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="phone-img intelligence">
+                    <div class="phone-left">
+                        <ul class="homeelecul">
+                            <li class="brick-item homeelecimg">
+                                <a href="javascript:;">
+                                    <img class="lazy" data-original="../image/i1.jpg">
+                                </a>
+                            </li>
+                            <li class="brick-item homeelecimg">
+                                <a href="javascript:;">
+                                    <img class="lazy" data-original="../image/i2.jpg">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="phone-right ">
+                        <ul class="clear ">
+                            <li>
+                                <!-- <div class="newbox">新品</div> -->
+                                <div class="imgbox">
+                                    <a href="javascript:;">
+                                        <img class="lazy" data-original="../image/I3.png">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="javascript:;" style="color:#333">米家飞利浦智睿台灯二代</a>
+                                </h3>
+                                <p class="title1">感知环境光，主动优化场景照明</p>
+                                <p class="price">
+                                    <span>
+                                      199元
+                                    </span>
+                                    <!-- <del style="color: #b0b0b0;">1999元</del> -->
+                                </p>
+                                <div class="review-wrapper">
+                                    <a href="javascript:;">
+                                        <span class="review">发货送货超级快，下单到收到只几个小时，惊呆了。台灯非...</span>
+                                        <span class="author">  来自于 416250199 的评价  </span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <!-- <div class="newbox">新品</div> -->
+                                <div class="imgbox">
+                                    <a href="javascript:;">
+                                        <img class="lazy" data-original="../image/i4.jpg">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="javascript:;" style="color:#333">米家飞利浦智睿台灯二代</a>
+                                </h3>
+                                <p class="title1">感知环境光，主动优化场景照明</p>
+                                <p class="price">
+                                    <span>
+                                      199元
+                                    </span>
+                                    <!-- <del style="color: #b0b0b0;">1999元</del> -->
+                                </p>
+                                <div class="review-wrapper">
+                                    <a href="javascript:;">
+                                        <span class="review">发货送货超级快，下单到收到只几个小时，惊呆了。台灯非...</span>
+                                        <span class="author">  来自于 416250199 的评价  </span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <!-- <div class="newbox">新品</div> -->
+                                <div class="imgbox">
+                                    <a href="javascript:;">
+                                        <img class="lazy" data-original="../image/i5.jpg">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="javascript:;" style="color:#333">米家飞利浦智睿台灯二代</a>
+                                </h3>
+                                <p class="title1">感知环境光，主动优化场景照明</p>
+                                <p class="price">
+                                    <span>
+                                      199元
+                                    </span>
+                                    <!-- <del style="color: #b0b0b0;">1999元</del> -->
+                                </p>
+                                <div class="review-wrapper">
+                                    <a href="javascript:;">
+                                        <span class="review">发货送货超级快，下单到收到只几个小时，惊呆了。台灯非...</span>
+                                        <span class="author">  来自于 416250199 的评价  </span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <!-- <div class="newbox">新品</div> -->
+                                <div class="imgbox">
+                                    <a href="javascript:;">
+                                        <img class="lazy" data-original="../image/I6.png">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="javascript:;" style="color:#333">米家飞利浦智睿台灯二代</a>
+                                </h3>
+                                <p class="title1">感知环境光，主动优化场景照明</p>
+                                <p class="price">
+                                    <span>
+                                      199元
+                                    </span>
+                                    <!-- <del style="color: #b0b0b0;">1999元</del> -->
+                                </p>
+                                <div class="review-wrapper">
+                                    <a href="javascript:;">
+                                        <span class="review">发货送货超级快，下单到收到只几个小时，惊呆了。台灯非...</span>
+                                        <span class="author">  来自于 416250199 的评价  </span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <!-- <div class="newbox">新品</div> -->
+                                <div class="imgbox">
+                                    <a href="javascript:;">
+                                        <img class="lazy" data-original="../image/i7.jpg">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="javascript:;" style="color:#333">米家飞利浦智睿台灯二代</a>
+                                </h3>
+                                <p class="title1">感知环境光，主动优化场景照明</p>
+                                <p class="price">
+                                    <span>
+                                      199元
+                                    </span>
+                                    <!-- <del style="color: #b0b0b0;">1999元</del> -->
+                                </p>
+                                <div class="review-wrapper">
+                                    <a href="javascript:;">
+                                        <span class="review">发货送货超级快，下单到收到只几个小时，惊呆了。台灯非...</span>
+                                        <span class="author">  来自于 416250199 的评价  </span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <!-- <div class="newbox">新品</div> -->
+                                <div class="imgbox">
+                                    <a href="javascript:;">
+                                        <img class="lazy" data-original="../image/i8.jpg">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="javascript:;" style="color:#333">米家飞利浦智睿台灯二代</a>
+                                </h3>
+                                <p class="title1">感知环境光，主动优化场景照明</p>
+                                <p class="price">
+                                    <span>
+                                      199元
+                                    </span>
+                                    <!-- <del style="color: #b0b0b0;">1999元</del> -->
+                                </p>
+                                <div class="review-wrapper">
+                                    <a href="javascript:;">
+                                        <span class="review">发货送货超级快，下单到收到只几个小时，惊呆了。台灯非...</span>
+                                        <span class="author">  来自于 416250199 的评价  </span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <!-- <div class="newbox">新品</div> -->
+                                <div class="imgbox">
+                                    <a href="javascript:;">
+                                        <img class="lazy" data-original="../image/i9.jpg">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="javascript:;" style="color:#333">米家飞利浦智睿台灯二代</a>
+                                </h3>
+                                <p class="title1">感知环境光，主动优化场景照明</p>
+                                <p class="price">
+                                    <span>
+                                      199元
+                                    </span>
+                                    <!-- <del style="color: #b0b0b0;">1999元</del> -->
+                                </p>
+                                <div class="review-wrapper">
+                                    <a href="javascript:;">
+                                        <span class="review">发货送货超级快，下单到收到只几个小时，惊呆了。台灯非...</span>
+                                        <span class="author">  来自于 416250199 的评价  </span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <!-- <div class="newbox">新品</div> -->
+                                <div class="imgbox">
+                                    <a href="javascript:;">
+                                        <img class="lazy" data-original="../image/i9.jpg">
+                                    </a>
+                                </div>
+                                <h3 class="title">
+                                    <a href="javascript:;" style="color:#333">米家飞利浦智睿台灯二代</a>
+                                </h3>
+                                <p class="title1">感知环境光，主动优化场景照明</p>
+                                <p class="price">
+                                    <span>
+                                      199元
+                                    </span>
+                                    <!-- <del style="color: #b0b0b0;">1999元</del> -->
+                                </p>
+                                <div class="review-wrapper">
+                                    <a href="javascript:;">
+                                        <span class="review">发货送货超级快，下单到收到只几个小时，惊呆了。台灯非...</span>
+                                        <span class="author">  来自于 416250199 的评价  </span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="mitv ">
+                <a href="javascript:;">
+                    <img class="lazy" data-original="../image/mvt3.jpg" style="width:1226px;">
+                </a>
+            </div>
+
+
             <!-- 热评产品 -->
             <div class="hotproduct">
                 <!-- 小标题 -->

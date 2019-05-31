@@ -1,4 +1,14 @@
 $(function() {
+    if (!cookie.get('login')) {
+        location.href = "index.html";
+    }
+
+    $('#login').html(cookie.get('username'));
+    $('#login').click(function() {
+        cookie.remove('login')
+    });
+
+
 
     //后台数据
     $.ajax({
@@ -13,7 +23,7 @@ $(function() {
                             <div class="newbox">新品</div>
                             <div class="imgbox">
                                 <a href="./商品详情页.html?${elm.id}">
-                                    <img src="${pic[0].src}">
+                                    <img class="lazy" data-original="${pic[0].src}">
                                 </a>
                             </div>
                             <h3 class="title">
@@ -29,7 +39,11 @@ $(function() {
                         </li>`;
                 $('.product1').append(li)
             })
-
+            $("img.lazy").lazyload({
+                effect: "fadeIn",
+                placeholder: "../image/dongtu.gif",
+                // container: $(".main")
+            });
         }
     });
     $.ajax({
@@ -43,7 +57,7 @@ $(function() {
                         <div class="newbox">新品</div>
                         <div class="imgbox">
                             <a href="./商品详情页家电.html?${response[i].id}">
-                                <img src="${response[i].pic}">
+                                <img class="lazy" data-original="${response[i].pic}">
                             </a>
                         </div>
                         <h3 class="title">
@@ -66,6 +80,11 @@ $(function() {
                 li1 += li;
             }
             $('.product2').html(li1)
+            $("img.lazy").lazyload({
+                effect: "fadeIn",
+                placeholder: "../image/dongtu.gif",
+                // container: $(".main")
+            });
         }
     });
 
@@ -79,7 +98,7 @@ $(function() {
                 var li = `<li class=" review-item  brick-item ">
                 <div class=" figure-img">
                     <a href="javascript:;">
-                        <img src="${response[i].pic}">
+                        <img class="lazy" data-original="${response[i].pic}">
                     </a>
                 </div>
                 <p class="review">
@@ -103,9 +122,19 @@ $(function() {
                 li1 += li;
             }
             $('.product3').html(li1)
+            $("img.lazy").lazyload({
+                effect: "fadeIn",
+                placeholder: "../image/dongtu.gif",
+                // container: $(".main")
+            });
         }
     });
 
+    $("img.lazy").lazyload({
+        effect: "fadeIn",
+        placeholder: "../image/dongtu.gif",
+        // container: $(".main")
+    });
 
     //轮播图
     var nowpic = 0;
