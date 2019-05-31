@@ -1,4 +1,5 @@
 $(function() {
+
     if (!cookie.get('login')) {
         location.href = "index.html";
     }
@@ -7,7 +8,6 @@ $(function() {
     $('#login').click(function() {
         cookie.remove('login')
     });
-
 
 
     //后台数据
@@ -41,7 +41,7 @@ $(function() {
             })
             $("img.lazy").lazyload({
                 effect: "fadeIn",
-                placeholder: "../image/dongtu.gif",
+                placeholder: "../image/dongtu1.gif",
                 // container: $(".main")
             });
         }
@@ -82,7 +82,7 @@ $(function() {
             $('.product2').html(li1)
             $("img.lazy").lazyload({
                 effect: "fadeIn",
-                placeholder: "../image/dongtu.gif",
+                placeholder: "../image/dongtu1.gif",
                 // container: $(".main")
             });
         }
@@ -124,7 +124,7 @@ $(function() {
             $('.product3').html(li1)
             $("img.lazy").lazyload({
                 effect: "fadeIn",
-                placeholder: "../image/dongtu.gif",
+                placeholder: "../image/dongtu1.gif",
                 // container: $(".main")
             });
         }
@@ -132,7 +132,7 @@ $(function() {
 
     $("img.lazy").lazyload({
         effect: "fadeIn",
-        placeholder: "../image/dongtu.gif",
+        placeholder: "../image/dongtu1.gif",
         // container: $(".main")
     });
 

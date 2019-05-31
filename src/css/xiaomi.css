@@ -1,3 +1,14 @@
+.hover, .main .phone-img .phone-left ul li:hover, .main .phone-img .phone-right ul li:hover, .main .hotproduct .review-item:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform: translate3d(0, -2px, 0);
+}
+
+.ellipsis, .main .phone-img .phone-right ul .lismore .title a, .main .phone-img .phone-right .title, .main .phone-img .phone-right .title a, .main .phone-img .phone-right .title1, .main .phone-img .phone-right .review-wrapper .review, .main .phone-img .phone-right .review-wrapper .author, .main .hotproduct .review-item .info, .main .hotproduct .review-item .title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .home-right {
   position: fixed;
   right: 0;
@@ -63,7 +74,7 @@
   text-align: center;
 }
 
-.home-right bar-subnav {
+.home-right .bar-subnav {
   position: absolute;
   left: -137px;
   top: 0;
@@ -71,27 +82,27 @@
   display: none;
 }
 
-.home-right bar-subnav .subnav-content {
+.home-right .bar-subnav .subnav-content {
   float: left;
   height: 187px;
   background: #fff;
   border: 1px solid #f5f5f5;
 }
 
-.home-right bar-subnav .subnav-content img {
+.home-right .bar-subnav .subnav-content img {
   width: 100px;
   height: 100px;
   margin: 20px 14px;
   background: #fff;
 }
 
-.home-right bar-subnav .subnav-content .subnav-text {
+.home-right .bar-subnav .subnav-content .subnav-text {
   width: 83px;
   margin: -10px auto 0;
   color: #333;
 }
 
-.home-right bar-subnav .subnav-arrow {
+.home-right .bar-subnav .subnav-arrow {
   float: left;
   width: 11px;
   height: 187px;
@@ -184,4 +195,435 @@
 
 .banner .sidebtn .rightbtn:hover {
   background-position: -42px 50%;
+}
+
+.banner .banner-nav {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.banner .banner-nav .banner-subnav {
+  width: 234px;
+  display: flex;
+  font-size: 12px;
+  text-align: center;
+  background: #5f5750;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.banner .banner-nav .banner-subnav a {
+  color: rgba(255, 255, 255, 0.7);
+  display: block;
+  width: 70px;
+  height: 42px;
+  padding: 20px 3px;
+}
+
+.banner .banner-nav .banner-subnav a i {
+  display: block;
+  height: 24px;
+  margin-bottom: 4px;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.banner .banner-nav .banner-subnav a:hover a:hover {
+  color: white;
+}
+
+.banner .banner-nav .threeimg {
+  width: 316px;
+}
+
+.banner .banner-nav .threeimg img {
+  width: 316px;
+  height: 170px;
+}
+
+.banner .banner2 {
+  margin: 30px 0 42px;
+  overflow: hidden;
+  height: 120px;
+}
+
+.banner .banner2 img {
+  width: 1226px;
+  height: 120px;
+}
+
+.main {
+  padding-top: 20px;
+  background-color: #f5f5f5;
+  padding-bottom: 20px;
+}
+
+.main .phone {
+  height: 686px;
+  margin-bottom: 8px;
+}
+
+.main .titlebox {
+  height: 58px;
+  position: relative;
+}
+
+.main .titlebox .more {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.main .titlebox .more a {
+  font-size: 16px;
+  line-height: 58px;
+  color: #424242;
+  transition: all .4s;
+}
+
+.main .titlebox .more a:hover {
+  color: #ff6700;
+}
+
+.main .titlebox .more a:hover i {
+  background-color: #ff6700;
+}
+
+.main .titlebox .more .iconfont {
+  width: 12px;
+  height: 12px;
+  border-radius: 16px;
+  padding: 4px;
+  margin-left: 8px;
+  font-size: 12px;
+  line-height: 12px;
+  color: #fff;
+  background: #b0b0b0;
+  vertical-align: 1px;
+  transition: all .4s;
+}
+
+.main .title2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 200;
+  line-height: 58px;
+  color: #333;
+}
+
+.main .phone-img {
+  margin-left: -14px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.main .phone-img .phone-left {
+  width: 234px;
+  float: left;
+  margin-left: 14px;
+}
+
+.main .phone-img .phone-left ul {
+  margin: 0 0 -14px -14px;
+  height: 614px;
+}
+
+.main .phone-img .phone-left ul li {
+  position: relative;
+  z-index: 1;
+  float: left;
+  width: 234px;
+  margin-left: 14px;
+  margin-bottom: 14px;
+  background: #fff;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+.main .phone-img .phone-left ul li img {
+  width: 234px;
+  height: 300px;
+}
+
+.main .phone-img .phone-left img {
+  widows: 234px;
+  height: 614px;
+}
+
+.main .phone-img .phone-right {
+  float: left;
+  margin-left: 14px;
+  width: 978px;
+}
+
+.main .phone-img .phone-right ul {
+  width: 992px;
+}
+
+.main .phone-img .phone-right ul li {
+  position: relative;
+  z-index: 1;
+  float: left;
+  width: 234px;
+  height: 260px;
+  padding: 20px 0;
+  margin-left: 14px;
+  margin-bottom: 14px;
+  background: #fff;
+  transition: all .2s;
+}
+
+.main .phone-img .phone-right ul li:hover .review-wrapper {
+  height: 76px;
+  opacity: 1;
+}
+
+.main .phone-img .phone-right ul .lismore {
+  height: 73px;
+  padding-top: 50px;
+}
+
+.main .phone-img .phone-right ul .lismore i {
+  font-size: 48px;
+  line-height: 48px;
+  color: #ff6700;
+}
+
+.main .phone-img .phone-right ul .lismore .imgbox {
+  position: absolute;
+  right: 20px;
+  top: 32px;
+  width: 80px;
+  height: 80px;
+}
+
+.main .phone-img .phone-right ul .lismore .imgbox img {
+  width: 80px;
+  height: 80px;
+}
+
+.main .phone-img .phone-right ul .lismore .title {
+  margin: -10px 110px 5px 30px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.main .phone-img .phone-right ul .lismore .title a {
+  display: block;
+  width: 50%;
+}
+
+.main .phone-img .phone-right ul .lismore .price {
+  margin: 0 110px 0 30px;
+  font-size: 12px;
+  color: #ff6700;
+}
+
+.main .phone-img .phone-right ul .lismore .more {
+  display: block;
+  margin: 0 110px 0 30px;
+  font-size: 18px;
+  color: #333;
+}
+
+.main .phone-img .phone-right ul .lismore .more small {
+  display: block;
+  font-size: 12px;
+  color: #757575;
+}
+
+.main .phone-img .phone-right .imgbox {
+  margin: 0 auto 18px;
+  width: 160px;
+  height: 160px;
+}
+
+.main .phone-img .phone-right .imgbox img {
+  width: 160px;
+  height: 160px;
+}
+
+.main .phone-img .phone-right .newbox {
+  background-color: #83c44e;
+  width: 64px;
+  height: 20px;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -32px;
+}
+
+.main .phone-img .phone-right .title {
+  margin: 0 10px 2px;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  width: 200px;
+}
+
+.main .phone-img .phone-right .title a {
+  display: block;
+}
+
+.main .phone-img .phone-right .title1 {
+  margin: 0 10px 10px;
+  height: 18px;
+  font-size: 12px;
+  text-align: center;
+  color: #b0b0b0;
+}
+
+.main .phone-img .phone-right .price {
+  margin: 0 10px 14px;
+  text-align: center;
+  color: #ff6700;
+}
+
+.main .phone-img .phone-right .review-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  width: 234px;
+  height: 0;
+  font-size: 12px;
+  background: #ff6700;
+  opacity: 0;
+  filter: alpha(opacity=0) \9;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+.main .phone-img .phone-right .review-wrapper a {
+  display: block;
+  padding: 8px 30px;
+  outline: 0;
+}
+
+.main .phone-img .phone-right .review-wrapper .review {
+  margin-bottom: 5px;
+  color: #fff;
+  display: block;
+}
+
+.main .phone-img .phone-right .review-wrapper .author {
+  color: rgba(255, 255, 255, 0.6);
+  display: block;
+}
+
+.main .mitv {
+  height: 120px;
+  margin: 28px 0 22px;
+}
+
+.main .homeelec {
+  height: 686px;
+  margin-bottom: 8px;
+}
+
+.main .homeelec .hothomeelecbox {
+  height: 58px;
+}
+
+.main .homeelec .hothomeelec {
+  padding: 16px 0 0;
+  font-size: 16px;
+}
+
+.main .homeelec .hothomeelec li {
+  color: #ff6700;
+  margin-left: 30px;
+  float: left;
+}
+
+.main .homeelec .hothomeelec li > a {
+  color: #424242;
+}
+
+.main .homeelec .hothomeelec .active1 {
+  border-bottom: 2px solid #ff6700;
+}
+
+.main .hotproduct {
+  margin-bottom: 20px;
+}
+
+.main .hotproduct li:nth-child(1) {
+  margin-left: 0;
+}
+
+.main .hotproduct .review-list {
+  width: 1240px;
+  height: 415px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.main .hotproduct .review-item {
+  position: relative;
+  float: left;
+  width: 296px;
+  height: 415px;
+  margin-bottom: 14px;
+  background: #fff;
+  transition: all .2s linear;
+}
+
+.main .hotproduct .review-item .review {
+  height: 72px;
+  margin: 0 28px 22px;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  overflow: hidden;
+}
+
+.main .hotproduct .review-item .auto {
+  position: relative;
+  height: 18px;
+  margin: 0 28px 8px;
+  padding: 0 10px 0 0;
+  font-size: 12px;
+  color: #b0b0b0;
+}
+
+.main .hotproduct .review-item .info {
+  margin: 0 30px;
+}
+
+.main .hotproduct .review-item .info .sep {
+  margin: 0 .25em;
+  color: #e0e0e0;
+}
+
+.main .hotproduct .review-item .info .price {
+  display: inline-block;
+  margin: 0;
+}
+
+.main .hotproduct .review-item .title {
+  display: inline-block;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  max-width: 170px;
+  vertical-align: bottom;
+  color: #333;
+}
+
+.main .hotproduct .figure-img {
+  width: 296px;
+  height: 220px;
+  margin: 0 0 28px;
+}
+
+.main .hotproduct .figure-img img {
+  width: 296px;
+  height: 220px;
 }
