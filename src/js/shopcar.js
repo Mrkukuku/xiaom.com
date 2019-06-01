@@ -20,7 +20,7 @@ $(function() {
         for (var i = 0; i < arr.length; i++) {
             toto += parseInt(arr[i].price) * parseInt(arr[i].num)
         }
-        //从cookie取id发个后太取得数据
+        //从cookie取id从后台取得数据
         var idList = shop.map(elm => elm.id).join();
         $.ajax({
             type: "get",
@@ -42,21 +42,43 @@ $(function() {
                 <div class="col col-img"><img src="${pic[0].src}" alt=""></div>
                 <div class="col col-name name1">${elm.title}</div>
                 <div class="col col-price price1">${elm.price}</div>
-                <div class="col col-num"><input type="number" name="number" id="number" value="${arr[0].num}" min="1" max="${elm.num}" ></div>
-                <div class="col col-total total1 total3">${parseInt(elm.price)*arr[0].num}元</div>
-                <a href="javascript:;" data-index=${arr[0].id} class="col col-action iconfont del">&#xe626;</a>
+                <div class="col col-num">
+                <a href="javascript:;" class="pre"><i class="iconfont">&#xe637;</i></a>
+                <input type="text" name="text" class="text" value="${arr[0].num}" min="1" max="${elm.num}" >
+                <a href="javascript:;" class="next"><i class="iconfont">&#xe635;</i></a>
+                </div>
+                <div class="col col-total total1"><span class="total2">${parseInt(elm.price)*arr[0].num}</span>元</div>
+                <a href="javascript:;" data-index=${arr[0].id} class="col col-action iconfont del">&#xe632;</a>
             </div>`
                     $('.list-body').append(str)
                 });
-                //删除商品
+                $('.text').on('blur', function() {
+                        //加减数量后价格的变化
+                        var isCheck = $(this).parent().siblings('.col-check').children('.check2').prop('checked');
+                        var val = $(this).val();
+                        var pri = parseInt($(this).parent().siblings('.price1').html());
+                        var totalp = val * pri;
+                        var total = $(this).parent().siblings('.total1').children('.total2');
+                        var addp = totalp - total.html();
+
+                        total.html(totalp)
+                        if (isCheck) {
+                            $('.total-price>em').html(function(i, oldattr) {
+                                return oldattr * 1 + addp
+
+                            });
+                        }
+                    })
+                    //删除商品
                 $('.del').on('click', function() {
-                        $(this).parent().empty();
+
                         var idex = $(this).attr('data-index');
                         var arr2 = shop.filter((val, i) => {
                             return val.id !== idex;
                         });
                         arr2 = JSON.stringify(arr2)
                         cookie.set('shop', arr2)
+                        $(this).parent().empty();
                         location.reload();
                         // console.log(toto + toto1)
                         // $('.total-price>em').html(toto + toto1);
@@ -82,8 +104,7 @@ $(function() {
                     fir.prop('checked', isCheck)
                     var issCheck = $(this).prop('checked');
                     //单选框的选择状态来改变总价格
-                    var pri = parseInt($(this).parent().parent().children('.total3').html());
-                    console.log(pri)
+                    var pri = parseInt($(this).parent().siblings().children('.total2').html());
                     if (issCheck) {
                         //选选中总价格加上点击的价格
                         $('.total-price>em').html(function(i, oldattr) {
@@ -91,6 +112,7 @@ $(function() {
                             return oldattr * 1 + pri
 
                         });
+
                     } else {
                         //取消选中总价格减去点击的价格
                         $('.total-price>em').html(function(i, oldattr) {
@@ -100,6 +122,8 @@ $(function() {
                         });
                     }
                 })
+
+
             }
         });
     }
@@ -128,17 +152,37 @@ $(function() {
 
                     var str = `  
                 <div class="itembox clear">
-                <div class="col col-check "> <input type="checkbox"  class="check1" checked></div>
+                <div class="col col-check"> <input type="checkbox"  class="check1" checked></div>
                 <div class="col col-img"><img src="${elm.pic}" alt=""></div>
                 <div class="col col-name name1">${elm.title}</div>
                 <div class="col col-price price1">${elm.price}</div>
-                <div class="col col-num"><input type="number" name="number" id="number" value="${arr[0].num}" min="1" max="${elm.num}" ></div>
-                <div class="col col-total total1 total2">${parseInt(elm.price)*arr[0].num}元</div>
-                <a href="javascript:;" data-index=${arr[0].id} class="col col-action iconfont del1">&#xe626;</a>
+                <div class="col col-num">
+                <a href="javascript:;" class="pre"><i class="iconfont">&#xe637;</i></a>
+                <input type="text" name="text" class="text" value="${arr[0].num}" min="1" max="${elm.num}" >
+                <a href="javascript:;" class="next"><i class="iconfont">&#xe635;</i></a>
+                </div>
+                <div class="col col-total total1"><span class="total2">${parseInt(elm.price)*arr[0].num}</span>元</div>
+                <a href="javascript:;" data-index=${arr[0].id} class="col col-action iconfont del1">&#xe632;</a>
             </div>`
                     $('.list-body').append(str)
                 });
+                $('.text').on('blur', function() {
+                    var isCheck = $(this).parent().siblings('.col-check').children('.check1').prop('checked');
+                    var val = $(this).val();
+                    var pri = parseInt($(this).parent().siblings('.price1').html());
+                    var totalp = val * pri;
+                    var total = $(this).parent().siblings('.total1').children('.total2');
+                    var addp = totalp - total.html();
 
+                    total.html(totalp)
+                    if (isCheck) {
+                        $('.total-price>em').html(function(i, oldattr) {
+                            return oldattr * 1 + addp
+
+                        });
+                    }
+
+                })
                 $('.del1').on('click', function() {
                     $(this).parent().empty();
                     var idex = $(this).attr('data-index');
@@ -166,10 +210,10 @@ $(function() {
                     var checkLength = $('.list-body .check1:checked').length;
                     isCheck = checkLength === islength;
                     fir.prop('checked', isCheck)
-                    var issCheck = $(this).prop('checked');
-                    var pri = parseInt($(this).parent().parent().children('.total2').html());
+                    var isCheck = $(this).prop('checked');
+                    var pri = parseInt($(this).parent().siblings().children('.total2').html());
                     // console.log(pri)
-                    if (issCheck) {
+                    if (isCheck) {
                         $('.total-price>em').html(function(i, oldattr) {
                             // console.log(oldattr, pri)
                             return oldattr * 1 + pri

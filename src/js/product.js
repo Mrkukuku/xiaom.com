@@ -1,6 +1,6 @@
 $(function() {
 
-    用户名
+    //用户名
     if (!cookie.get('login')) {
         location.href = "index.html";
     }

@@ -112,6 +112,17 @@ main .carbox .col-num {
   color: #424242;
 }
 
+main .carbox .col-num a {
+  float: left;
+  width: 38px;
+  height: 38px;
+  line-height: 38px;
+  color: #757575;
+  font-size: 20px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
 main .carbox .col-total {
   width: 120px;
   padding-right: 81px;
@@ -127,6 +138,18 @@ main .carbox .col-action {
 main .carbox .itembox {
   padding: 15px 26px 15px 0;
   border-top: 1px solid #e0e0e0;
+}
+
+main .carbox .itembox .text {
+  float: left;
+  width: 72px;
+  height: 38px;
+  line-height: 38px;
+  padding: 0;
+  border-width: 0;
+  color: #424242;
+  font-size: 16px;
+  text-align: center;
 }
 
 main .carbox .itembox .name1 {
