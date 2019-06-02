@@ -12,12 +12,20 @@
     gulp.task('imgmin', () => {
         return gulp.src('./src/image/**')
             .pipe(imagemin())
-            .pipe(gulp.dest('dist/image'))
+            .pipe(gulp.dest('./src/image'))
     })
 
-    gulp.task('say', function() {
-        return new Promise(function(resolve, reject) {
-            console.log('hello world');
-            resolve()
-        })
-    });
+    // gulp.task('say', function() {
+    //     return new Promise(function(resolve, reject) {
+    //         console.log('hello world');
+    //         resolve()
+    //     })
+    // });
+    gulp.task('jsmin', () => {
+        return gulp.src(['./src/js/*.js', '!src/js/*min.js'])
+            .pipe(uglify())
+            .pipe(rename(function(path) {
+                path.extname = ".min.js";
+            }))
+            .pipe(gulp.dest('dist/js'));
+    })
