@@ -56,7 +56,7 @@ $(function() {
                 var li = `<li>
                         <div class="newbox">新品</div>
                         <div class="imgbox">
-                            <a href="./商品详情页家电.html?${response[i].id}">
+                            <a href="./商品详情页?${response[i].id}">
                                 <img class="lazy" data-original="${response[i].pic}">
                             </a>
                         </div>

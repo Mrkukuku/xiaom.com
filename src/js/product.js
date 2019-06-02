@@ -18,48 +18,77 @@ $(function() {
         },
         dataType: "json",
         success: function(response) {
-            var pic = JSON.parse(response.pic);
-            var temp = `<div class="banner-top">
-           <div class="side"><img src="${pic[0].src}" alt="1"></div>
-           <div class="side"><img src="${pic[1].src}" alt="2"></div>
-           <div class="side"><img src="${pic[2].src}" alt="3"></div>
-           <div class="side"><img src="${pic[3].src}" alt="4"></div>
-           <div class="banner-bottom">
-               <div class="btns">
-                   <a href="javascript:void(0);" class="btn active">1</a>
-                   <a href="javascript:void(0);" class="btn">2</a>
-                   <a href="javascript:void(0);" class="btn">3</a>
-                   <a href="javascript:void(0);" class="btn">4</a>
+            var temp = '';
+            if (response.pic.length > 30) {
+                var pic = JSON.parse(response.pic);
+                temp = `<div class="banner-top">
+                   <div class="side"><img src="${pic[0].src}" alt="1"></div>
+                   <div class="side"><img src="${pic[1].src}" alt="2"></div>
+                   <div class="side"><img src="${pic[2].src}" alt="3"></div>
+                   <div class="side"><img src="${pic[3].src}" alt="4"></div>
+                   <div class="banner-bottom">
+                       <div class="btns">
+                           <a href="javascript:void(0);" class="btn active">1</a>
+                           <a href="javascript:void(0);" class="btn">2</a>
+                           <a href="javascript:void(0);" class="btn">3</a>
+                           <a href="javascript:void(0);" class="btn">4</a>
+                       </div>
+                       <div class="sidebtn">
+                           <a href="javascript:void(0);" class="leftbtn"></a>
+                           <a href="javascript:void(0);" class="rightbtn"></a>
+                       </div>
+
+                   </div>
                </div>
-               <div class="sidebtn">
-                   <a href="javascript:void(0);" class="leftbtn"></a>
-                   <a href="javascript:void(0);" class="rightbtn"></a>
-               </div>
+               <div class="cho-right">
+                   <p class="name">${response.title}</p>
+                   <p class="detail">${response.details}</p>
+                   <p>小米自营</p>
+                   <p class="cho-pic">${response.price}</p>
+                   <div class="cho-price">
+                       <ul>
+                           <li>${response.title}<span>${response.price}</span></li>
+                           <li class="total"> 总计 ：${response.price} </li>
+                       </ul>
+                   </div>
 
-           </div>
-       </div>
-       <div class="cho-right">
-           <p class="name">${response.title}</p>
-           <p class="detail">${response.details}</p>
-           <p>小米自营</p>
-           <p class="cho-pic">${response.price}</p>
-           <div class="cho-price">
-               <ul>
-                   <li>${response.title}<span>${response.price}</span></li>
-                   <li class="total"> 总计 ：${response.price} </li>
-               </ul>
-           </div>
+                   <ul class="shopcar clear">
+                       <li>
+                           <input type="number" name="number" id="number" value="1" min="1" max="${response.num}" >
+                       </li>
+                       <li>
+                           <a href="javascript:void(0);" class="gobuy">加入购物车</a>
+                       </li>
 
-           <ul class="shopcar clear">
-               <li>
-                   <input type="number" name="number" id="number" value="1" min="1" max="${response.num}" >
-               </li>
-               <li>
-                   <a href="javascript:void(0);" class="gobuy">加入购物车</a>
-               </li>
+                   </ul>
+               </div>`
+            } else {
+                temp = `<div class="banner-top">
+                        <div class="side"><img src="${response.pic}" alt="1"></div>
+                    </div>
+                    <div class="cho-right">
+                        <p class="name">${response.title}</p>
+                        <p class="detail">${response.details}</p>
+                        <p>小米自营</p>
+                        <p class="cho-pic">${response.price}</p>
+                        <div class="cho-price">
+                            <ul>
+                                <li>${response.title}<span>${response.price}</span></li>
+                                <li class="total"> 总计 ：${response.price} </li>
+                            </ul>
+                        </div>
 
-           </ul>
-       </div>`
+                        <ul class="shopcar clear">
+                            <li>
+                                <input type="number" name="number" id="number" value="1" min="1" max="${response.num}" >
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="gobuy">加入购物车</a>
+                            </li>
+
+                        </ul>
+                    </div>`
+            }
             $('.banner').append(temp);
             //加入购物车特效
             var nowpic = 0;

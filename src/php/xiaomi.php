@@ -1,6 +1,7 @@
 <?php
     include("./coon.php");
-    $sql="select * from product";
+    $type='phone';
+    $sql="select * from product where type='$type'";
     $res=$mysqli->query($sql);
     $arr=array();
     while($row=$res->fetch_assoc()){
