@@ -109,55 +109,16 @@
         .messeg {
             margin-left: 250px;
         }
+        
+        .error {
+            color: red;
+        }
     </style>
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../js/jquery.label_better.min.js"></script>
-    <script>
-        $(function() {
-            $("input.label_better").label_better({
-                position: "top",
-                animationTime: 500,
-                easing: "ease-in-out",
-                offset: 20,
-                hidePlaceholderOnFocus: true
-            });
-            $('#username').keyup(function() {
-                $.ajax({
-                    type: "get",
-                    url: "../php/zhuce.php",
-                    data: {
-                        username: this.value,
-                        password: ''
-                    },
-                    dataType: "json",
-                    success: function(response) {
-                        if (response.reslut) {
-                            $('.messeg').html(response.messeg).css('color', 'red')
+    <script src="../../node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="../js/zhuce.js"></script>
 
-                        } else if ($('#username').val()) {
-                            $('.messeg').html(response.messeg).css('color', 'green')
-                        }
-                    }
-                });
-                if (!$('#username').val()) {
-                    $('.messeg').html('')
-                }
-            });
-            // $('#username').blur(function() {
-            //     $('.messeg').html('')
-            // })
-
-
-
-            $('#checked').keyup(function() {
-                if ($(this).val() == $('#password').val()) {
-                    $('.check').html('');
-                } else {
-                    $('.check').html('密码不一致').css('color', 'red');
-                }
-            })
-        })
-    </script>
 </head>
 
 <body>
@@ -176,11 +137,12 @@
                 </div>
 
                 <div class="login">
-                    <form action="../php/zhuce1.php" method="get">
-                        <input type="text" name="username" id="username" class="label_better input" placeholder="邮箱/手机号码/小米ID">
+                    <form action="../php/zhuce1.php" method="get" id="myform">
+                        <label for="手机号码"></label>
+                        <input type="text" name="username" id="username" class="label_better input" placeholder="手机号码">
                         <span class="messeg"></span>
-                        <input type="password" name="password" id="password" class="label_better input" placeholder="密码">
-                        <input type="password" name="password" id="checked" class="label_better input" placeholder="请确认密码">
+                        <input type="password" name="password" id="password" class="input" placeholder="密码">
+                        <input type="password" name="checked" id="checked" class="input" placeholder="请确认密码">
                         <span class="check"></span>
                         <input type="submit" value="注册" id="submit">
                     </form>

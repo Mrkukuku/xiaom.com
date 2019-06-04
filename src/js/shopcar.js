@@ -71,7 +71,7 @@ $(function() {
                 }
                 cal()
                     //加减数量后价格的变化
-                $('.text').on('blur', function() {
+                $('.text').on('change', function() {
                     var isCheck = $(this).parent().siblings('.col-check').children('.check1').prop('checked');
                     var val = $(this).val();
                     if (val <= 0) {
@@ -85,17 +85,66 @@ $(function() {
                     var addp = totalp - total.html();
 
                     total.html(totalp)
-                    save()
+
                     if (isCheck) {
                         $('.total-price>em').html(function(i, oldattr) {
                             return oldattr * 1 + addp
 
                         });
-                        save()
+
                     }
                 })
 
 
+                //加减按钮
+                $('.next').on('click', function() {
+                    $(this).siblings('.text').val(function(idex, oldval) {
+                        return oldval * 1 + 1;
+                    })
+                    var val = $(this).siblings('.text').val()
+                    var isCheck = $(this).parent().siblings('.col-check').children('.check1').prop('checked');
+                    var pri = parseInt($(this).parent().siblings('.price1').html());
+                    var totalp = val * pri;
+                    var total = $(this).parent().siblings('.total1').children('.total2');
+                    //增减量
+                    var addp = totalp - total.html();
+
+                    total.html(totalp)
+
+                    if (isCheck) {
+                        $('.total-price>em').html(function(i, oldattr) {
+                            return oldattr * 1 + addp
+
+                        });
+
+                    }
+                })
+                $('.pre').on('click', function() {
+                    $(this).siblings('.text').val(function(idex, oldval) {
+                        return oldval * 1 - 1;
+                    })
+                    var val = $(this).siblings('.text').val()
+                    if (val <= 0) {
+                        val = 1;
+                        $(this).siblings('.text').val(1)
+                    }
+                    var isCheck = $(this).parent().siblings('.col-check').children('.check1').prop('checked');
+                    var pri = parseInt($(this).parent().siblings('.price1').html());
+                    var totalp = val * pri;
+                    var total = $(this).parent().siblings('.total1').children('.total2');
+                    //增减量
+                    var addp = totalp - total.html();
+
+                    total.html(totalp)
+
+                    if (isCheck) {
+                        $('.total-price>em').html(function(i, oldattr) {
+                            return oldattr * 1 + addp
+
+                        });
+
+                    }
+                })
 
                 //全选框
                 var fir = $('.list-head input[type="checkbox"]');
@@ -105,10 +154,10 @@ $(function() {
                     //全选框的选择状态来改变总价格
                     if (isCheck) {
                         cal()
-                        save()
+
                     } else {
                         $('.total-price>em').html(0);
-                        save()
+
                     }
                     els.prop('checked', isCheck);
                 })
@@ -126,14 +175,14 @@ $(function() {
                             // console.log(oldattr, pri)
                             return oldattr * 1 + pri
                         });
-                        save()
+
                     } else {
                         //取消选中总价格减去点击的价格
                         $('.total-price>em').html(function(i, oldattr) {
                             // console.log(oldattr, pri)
                             return oldattr * 1 - pri
                         });
-                        save()
+
                     }
                 })
 
@@ -149,9 +198,7 @@ $(function() {
                     location.reload();
                 })
 
-                function save() {
-                    localStorage.setItem('main', $('.list-body').html())
-                }
+
 
             }
 

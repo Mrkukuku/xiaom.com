@@ -1,13 +1,13 @@
 $(function() {
 
-    //用户名
-    // if (!cookie.get('login')) {
-    //     location.href = "index.html";
-    // }
-    // $('#login').html(cookie.get('username'))
-    // $('#login').click(function() {
-    //     cookie.remove('login')
-    // })
+    // 用户名
+    if (!cookie.get('login')) {
+        location.href = "index.html";
+    }
+    $('#login').html(cookie.get('username'))
+    $('#login').click(function() {
+        cookie.remove('login')
+    })
 
     var id = location.search.split('?')[1];
     $.ajax({

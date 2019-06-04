@@ -1,7 +1,6 @@
 <?php
     include('./coon.php');
     $username=$_GET['username'];
-    $password=$_GET['password'];
     $sql="select * from xiaomi where username='$username'";
     $res=$mysqli->query($sql);
     // $res->num_rows>0
