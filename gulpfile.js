@@ -29,3 +29,22 @@
             }))
             .pipe(gulp.dest('dist/js'));
     })
+
+    gulp.task('htmlmin', () => {
+        return gulp.src(['./src/html/*.html', '!src/html/*min.html'])
+            .pipe(htmlmin())
+            .pipe(rename(function(path) {
+                path.extname = ".min.html";
+            }))
+            .pipe(gulp.dest('dist/html'))
+    });
+
+    gulp.task('sprit', function() {
+        return gulp.src(['src/image/logo6.png', 'src/image/logo1.png', 'src/image/logo2.png', 'src/image/logo4.png'])
+            .pipe(spritesmith({
+                imgName: 'sprite.png',
+                cssName: 'sprite.css',
+            }))
+            .pipe(spritesmash())
+            .pipe(gulp.dest('dist/img'));
+    });
