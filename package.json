@@ -16,7 +16,7 @@
     "gulp-htmlmin": "^5.0.1",
     "gulp-rename": "^1.4.0",
     "gulp-uglify": "^3.0.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jquery-validation": "^1.19.0",
     "jquey": "0.0.1-security",
     "ui": "^0.2.4",
