@@ -17,7 +17,7 @@
     "gulp-rename": "^1.4.0",
     "gulp-uglify": "^3.0.2",
     "jquery": "^3.4.1",
-    "jquery-validation": "^1.19.0",
+    "jquery-validation": "^1.19.4",
     "jquey": "0.0.1-security",
     "ui": "^0.2.4",
     "validation": "0.0.1"
